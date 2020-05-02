@@ -5,7 +5,7 @@ ROOT_DIR=${1-.}
 # Port to use for server, or 8000 by default.
 PORT=${2-8000}
 # Convenience tag for docker reference.
-TAG=directory_app:latest
+TAG=app:latest
 
 # Build the Docker image
 docker build -t $TAG .
