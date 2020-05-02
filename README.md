@@ -5,21 +5,25 @@
 ### Local
 `python main.py [root directory] [port]`
 
+For example, `python main.py bar 1234` will run on port :1234 using bar as the root directory.
+
 ### Docker
 `./run.sh [root directory] [port]`
+
+For example, `./run.sh .git 1234` will run on port :1234 using .git as the root directory.
 
 By default, this uses the current directory as default and runs on port 8000. Haven't implemented tying the two args to flags (--root [root] --port [port]), but this allows for some basic flexibility.
 
 ## Assumptions
 
-*		This assumes that Docker is installed. I used
+This assumes that Docker is installed. I used
 `Docker version 19.03.8, build afacb8b` but anything recent should work. No promises for older versions.
 
-*		I used Python 2.7 if only because I haven't programmed on this laptop for a while and haven't gone through the work of upgrading to Python 3. Happy to rewrite in Python 3 if that's so desired.
+I used Python 2.7 if only because I haven't programmed on this laptop for a while and haven't gone through the work of upgrading to Python 3. Happy to rewrite in Python 3 if that's so desired.
 
-*		I assume that we won't need to worry about pagination for the get request.
+I assume that we won't need to worry about pagination for the get request.
 
-*		I don't support parent paths (..) for the API, which seems like the right security call. You can still init the server with a parent path, that just becomes the root node.
+I don't support parent paths (..) for the API, which seems like the right security call. You can still init the server with a parent path, that just becomes the root node.
 
 ## Testing instructions
 `python -m pytest`
